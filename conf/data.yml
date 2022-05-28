@@ -1,0 +1,125 @@
+Weather(w1):
+  code: 100
+  temp: 22.3
+  wSpeed: 19
+  wDir: 150
+  pressure: 1000
+Weather(w2):
+  code: 100
+  temp: 22.4
+  wSpeed: 6
+  wDir: 300
+  pressure: 1000
+Weather(w3):
+  code: 100
+  temp: 23.5
+  wSpeed: 8
+  wDir: 350
+  pressure: 1000
+Weather(w4):
+  code: 100
+  temp: 23.6
+  wSpeed: 8
+  wDir: 70
+  pressure: 1000
+Weather(w5):
+  code: 200
+  temp: 24.7
+  wSpeed: 45
+  wDir: 50
+  pressure: 1000
+Weather(w6):
+  code: 200
+  temp: 24.8
+  wSpeed: 12
+  wDir: 100
+  pressure: 1000
+Weather(w7):
+  code: 300
+  temp: 28.8
+  wSpeed: 12
+  wDir: 290
+  pressure: 1000
+Weather(w8):
+  code: 300
+  temp: 29.8
+  wSpeed: 12
+  wDir: 210
+  pressure: 1000
+Weather(w9):
+  code: 100
+  temp: 30.8
+  wSpeed: 12
+  wDir: 140
+  pressure: 1000
+Weather(w10):
+  code: 300
+  temp: 54.8
+  wSpeed: 18
+  wDir: 150
+  pressure: 1000
+Weather(w11):
+  code: 200
+  temp: 77.8
+  wSpeed: 12
+  wDir: 100
+  pressure: 1000
+Weather(w12):
+  code: 300
+  temp: 33.8
+  wSpeed: 19
+  wDir: 300
+  pressure: 1000
+Weather(w13):
+  code: 2000
+  temp: 21.8
+  wSpeed: 11
+  wDir: 180
+  pressure: 1000
+Weather(w14):
+  code: 100
+  temp: 26.8
+  wSpeed: 114
+  wDir: 300
+  pressure: 1000
+Weather(w15):
+  code: 200
+  temp: 80.5
+  wSpeed: 3
+  wDir: 78
+  pressure: 1000
+
+Station(s1):
+  place: Zion
+  weatherData:
+  - w1
+  - w2
+  - w3
+
+Station(s2):
+  place: Capitol Reef
+  weatherData:
+  - w4
+  - w5
+  - w6
+
+Station(s3):
+  place: Canyonlands
+  weatherData:
+  - w7
+  - w8
+  - w9
+
+Station(s4):
+  place: Bryce Canyon
+  weatherData:
+  - w10
+  - w11
+  - w12
+
+Station(s5):
+  place: Arches
+  weatherData:
+  - w13
+  - w14
+  - w15

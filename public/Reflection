@@ -1,0 +1,86 @@
+Reflection:
+
+
+Starter:
+
+Code, Wind Temp and Speed are all fed into the project through data.yml file in project.
+
+Station name set up in Station model on line 31 returning a String of place. Line 18 of dashboard.html
+shows ${station.place} which runs through the array list of all station places from data.yml.
+
+placeWeatherData.html loads and displays the stations from the Yaml file.
+
+The start.html folder supports the view seen on the WeatherTop home page and give some information
+on the mission of WeatherTop. about.html has further information on the history of national parks in the U.S.
+
+All HTML pages follow a cohesive theme and are styled using elements from Fomantic UI.
+
+
+
+
+Baseline:
+Pressure successfully added to Yaml file and is included in station readings. getWeatherFrom Code method
+lines 64-86 takes the weather read in from the input Code numbers 100-800 even.
+
+Lines 94-120 shows the method containing the calculation for getWindInBeaufort.
+
+Line 129 gets the Pressure reading.
+
+Lines 138-142 shows the method for getTempInF (Fahrenheit)
+
+Line 49 is getTemp, as default temp in celcius as defined in project specs I kept the
+method name as simply getTemp.
+
+The Station model holds all methods for getting the latest weather readings and uses the methods
+mentioned above to achieve this.
+
+In Station 41-49 gets latest weather, 74-83 gets latest pressure, 91-100 gets latest Fahrenheit,
+108-117 gets latest temperature, 125-143 gets latest Beaufort reading, 142-151 gets latest latest wind direction
+and 158-166 gets latest wind chill.
+
+The dashboard.html and placeWeatherData.html files display these methods in html in the dashboard
+view showing station name with the latest weather and matching icon. Clicking the folder icon opens the
+Station view which displays the rest of the data logs plus a menu at the top displaying the current weather
+derived from latest weather methods.
+
+
+
+
+Release 1:
+Line 158-185 in Weather model show the method I use to read out my Wind Direction.
+I originally wanted this to be a hashmap but encountered a bug, after a few hours trying to fix this
+I decided it best to complete the task my any means and went for if and else statements instead.
+This fixed my issue in about 10 minutes.
+GetLatestWDir is displayed in placeWeatherData.html on line 26, GetWDir created in Weather lines 160-194.
+
+
+GetWChill lines 202-207 in weather reads in wind chill, lines 158-166 in station gets latest wind chill and displays
+this is placeWeatherData.html on line 27.
+
+
+The addStation method can be found in the Dashboard controller lines 31-36, lines 27-33 of dashboard.html
+display the button to add said station. The try/catch statements seen in the Station class, particularly
+lines 41-49 allow me to use the error message to direct the user to the folder icon to add readings.
+The rest of the try catch statements in Station are constructed to display no error when no
+weather readings are input along with the station.
+
+addReading is also contained in the Dashboard controller lines 43-47, lines 62-86 shows the html for
+adding a reading. All readings have directions in the text fill space to direct users appropriately
+to enter compatible data.
+
+Both of these methods are supported in the routes folder on lines 9 and 10.
+
+By clicking the folder icon displayed on line 21 of dashboard.html you open the station readings
+and can add information using the form there.
+
+data does not save visually but can be seen to be logged on localhost:9000/@db proving
+that routes are functioning as intended.
+
+
+Release 2:
+
+I have included one feature of release 2, that being the icons associated with the current weatehr conditions.
+I was able to fix my bud with the hashmap for this stage and can be seen lines 35-47.
+I fixed my bug using default values. The icon is used on line 18 of placeWeatherData.html and line 19
+of dashboard.html.
+

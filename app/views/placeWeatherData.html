@@ -1,0 +1,88 @@
+#{extends 'main.html' /}
+#{set title:'Weather Data' /}
+
+#{menu id:"dashboard"/}
+
+
+<meta charset="UTF-8">
+<title>Weather Data</title>
+<table class="ui fixed table">
+    <h2 class="ui header"> ${station.place} : </h2>
+
+    <body>
+
+
+    <div class="ui grid">
+        <div class="four wide column" style="background-color: #D98566">
+            <h1>Latest Weather</h1>
+            ${station.getLatestWeather()}<br> <i class="${station.getWeatherIcon()}" style="color: #B3DAF2"></i></div>
+
+        <div class="four wide column" style="background-color: #D9B573">
+            <h1>Temperature</h1>
+            ${station.getLatestTempF()} F<br>${station.getLatestTemp()} C
+        </div>
+
+        <div class="four wide column" style="background-color: #BFAA3F"><h1>Wind</h1>
+            ${station.getLatestBeaufort()}<br>${station.getLatestWDir()}
+            <br>Feels Like ${station.getLatestWindChill()}
+        </div>
+
+        <div class="four wide column" style="background-color: #C0DDEF"><h1>Pressure</h1>
+            ${station.getLatestPressure()} hpa
+        </div>
+    </div>
+
+    <table class="ui fixed table">
+        <thead>
+        <h4>General Weather Data Logs :</h4>
+        <tr>
+            <th style="background-color: #9BC9F1">Code</th>
+            <th style="background-color: #9BC9F1">Temp</th>
+            <th style="background-color: #9BC9F1">Wind Speed</th>
+            <th style="background-color: #9BC9F1">Pressure</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        #{list items:station.weatherData, as:'weather'}
+        <tr>
+            <td>${weather.code}</td>
+            <td>${weather.temp}</td>
+            <td>${weather.wSpeed}</td>
+            <td>${weather.pressure}</td>
+
+        </tr>
+        #{/list}
+        </tbody>
+    </table>
+
+    </body>
+</table>
+
+<form class="ui stacked segment form" action="/dashboard/addReading" method="POST">
+    <div class="field">
+        <label>Code</label>
+        <input placeholder="Code - Determining Latest Weather" type="text" name="code">
+    </div>
+
+    <div class="field">
+        <label>Temp</label>
+        <input placeholder="Temperature - Celsius" type="text" name="temp">
+    </div>
+
+    <div class="field">
+        <label>Wind Speed</label>
+        <input placeholder="Wind Speed - kmph" type="text" name="wSpeed">
+    </div>
+
+    <div class="field">
+        <label>Pressure</label>
+        <input placeholder="Pressure - hpa" type="text" name="pressure">
+    </div>
+    <div class="field">
+        <label>Wind Direction</label>
+        <input placeholder="Wind Direction - between 348.75 - 11.25 degrees" type="text" name="direction">
+    </div>
+    <button class="ui inverted primary button">Add Reading</button>
+
+</form>

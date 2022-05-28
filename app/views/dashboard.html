@@ -1,0 +1,39 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"dashboard"/}
+
+<div class="ui center aligned message" style="background-color: coral">
+    <div class="content">
+        <div class="header">
+            <h2 class="ui header">
+                WeatherTop Data Charts - Utah National Parks
+            </h2>
+        </div>
+    </div>
+</div>
+
+#{list items:station, as:'station'}
+<section class="ui segment" style="background-color: #C0DDEF">
+    <h2 class="ui header"> ${station.place} : </h2>
+    <p> ${station.getLatestWeather()}<br><br><i class="${station.getWeatherIcon()}"></i></p>
+
+    <a href="/station/${station.id}"> <i class="folder open icon"></i></i> </a>
+</section>
+
+#{/list}
+
+
+<form class="ui stacked segment form" action="/dashboard/addStation" method="POST">
+    <div class="field">
+        <label>Place</label>
+        <input placeholder="Title" type="text" name="place">
+    </div>
+    <button class="ui inverted primary fluid ui button">Add Station</button>
+</form>
+<section class="ui center aligned middle aligned segment" style="background-color: #B3DAF2">
+    <footer style="color: coral"> WeatherTopStation</footer>
+
+</section>
+
+
